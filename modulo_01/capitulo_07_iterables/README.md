@@ -1,5 +1,44 @@
 # Capítulo 7. Iterables: Listas, tuplas y range
 
+## Introducción: ¿Qué es un Arreglo (Array)?
+
+En términos generales, un **arreglo** es una estructura de datos que permite almacenar una colección de elementos del mismo tipo en posiciones de memoria contiguas. Imaginalo como una fila de casilleros donde cada uno guarda un valor.
+
+### El concepto de Índices
+
+Para acceder a los elementos de un arreglo, utilizamos **índices**. Un índice es un número entero que representa la posición de un elemento dentro de la colección.
+
+**Regla de Oro:** En la mayoría de los lenguajes de programación (incluido Python), los índices comienzan en **0**.
+
+#### Visualización de un Arreglo
+
+```plain
+    Elementos:    [ "A", "B", "C", "D", "E" ]
+                   ↑    ↑    ↑    ↑    ↑
+    Índices:       0    1    2    3    4
+```
+
+O de forma más detallada (Arte ASCII):
+
+```plain
++-----------+-----------+-----------+-----------+-----------+
+|    "A"    |    "B"    |    "C"    |    "D"    |    "E"    |  <-- Elementos
++-----------+-----------+-----------+-----------+-----------+
+      0           1           2           3           4         <-- Índices (Posición)
++-----------+-----------+-----------+-----------+-----------+
+```
+
+## Arreglos en Python: Las Listas
+
+En Python, el equivalente más cercano y versátil a un arreglo es la **Lista** (`list`). A diferencia de los arreglos tradicionales en otros lenguajes (como C o Java), las listas en Python son:
+
+1. **Dinámicas:** Pueden cambiar de tamaño (añadir o quitar elementos).
+2. **Heterogéneas:** Pueden guardar diferentes tipos de datos al mismo tiempo.
+
+---
+
+## Iterables en Python
+
 En Python, las estructuras iterables son objetos que se pueden recorrer o iterar. Esto significa que puedes acceder a sus elementos uno por uno en un orden específico. Aquí tienes algunas de las estructuras iterables más comunes en Python:
 
 1. **Listas:**
@@ -16,7 +55,7 @@ En Python, las estructuras iterables son objetos que se pueden recorrer o iterar
      tupla = (10, 20, 30, 40, 50)
      ```
 
-3. **Cadenas de texto (Strings):**
+3. **Cadenas de plaino (Strings):**
    - Ejemplo:
 
      ```python
@@ -54,17 +93,18 @@ En Python, las estructuras iterables son objetos que se pueden recorrer o iterar
 
 Estas estructuras permiten la iteración a través de sus elementos, ya sea utilizando un bucle `for` o mediante otras técnicas de iteración. Además, Python proporciona funciones y métodos integrados que trabajan con estructuras iterables, como `enumerate`, `zip`, y `map`, que pueden ser útiles para realizar operaciones más avanzadas durante la iteración.
 
-
-# Listas
+## Listas
 
 ¡Por supuesto! En Python, una lista es una estructura de datos que te permite almacenar y organizar elementos de manera secuencial. Aquí tienes información sobre las listas, sus características principales, algunos métodos y funciones esenciales, así como ejemplos:
 
 **Características principales de las listas en Python:**
+
 1. **Secuencialidad:** Los elementos en una lista están organizados en un orden específico y se accede a ellos mediante índices.
 2. **Mutabilidad:** Las listas son mutables, lo que significa que puedes modificar, añadir o eliminar elementos después de haber creado la lista.
 3. **Heterogeneidad:** Una lista puede contener elementos de diferentes tipos de datos, como números, cadenas, booleanos, otras listas, etc.
 
 **Operaciones comunes con listas:**
+
 1. **Concatenación (`+`):** Combina dos listas en una sola.
 2. **Repetición (`*`):** Repite los elementos de una lista.
 3. **Indexación (`[]`):** Accede a elementos individuales mediante índices.
@@ -106,7 +146,6 @@ print(porcion_con_paso)  # Imprime [1, 3, 5, 7, 9]
 ```
 
 Al igual que con las cadenas, el operador de slice en listas no modifica la lista original, sino que crea una nueva lista con la porción deseada. Este operador es muy útil para manipular y trabajar con subconjuntos de datos en listas de manera eficiente.
-
 
 **Métodos y funciones principales para trabajar con listas:**
 
@@ -204,7 +243,7 @@ Las listas son una herramienta versátil y poderosa en Python, utilizadas para m
 
  En Python, tanto el método `sort()` como la función `sorted()` se utilizan para ordenar elementos en una lista. Sin embargo, hay diferencias clave en su comportamiento y cómo se aplican. Aquí tienes una explicación detallada de cada uno:
 
-### Método `sort()`:
+### Método `sort()`
 
 - **In-place:** El método `sort()` ordena la lista "in-place", lo que significa que modifica la lista original directamente.
 - **Modificación de la lista original:** La lista original se modifica, y no se crea una nueva lista.
@@ -220,7 +259,7 @@ print(mi_lista)
 # Imprime: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 ```
 
-### Función `sorted()`:
+### Función `sorted()`
 
 - **Crea una nueva lista ordenada:** La función `sorted()` devuelve una nueva lista ordenada y no modifica la lista original.
 - **Puede trabajar con cualquier iterable:** No está limitada a listas y puede ordenar cualquier iterable, incluyendo tuplas, cadenas y más.
@@ -239,24 +278,25 @@ print(mi_lista)
 # Imprime: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 ```
 
-### Resumen:
+### Resumen
 
 - Usa `sort()` si deseas ordenar una lista existente y no necesitas conservar la lista original.
 - Usa `sorted()` si necesitas una nueva lista ordenada y quieres mantener la original sin cambios, o si estás trabajando con otros tipos de iterables.
 
 En resumen, la principal diferencia radica en el hecho de que `sort()` modifica la lista original, mientras que `sorted()` crea una nueva lista ordenada sin modificar la original.
 
-
-# tuplas
+## tuplas
 
 ¡Claro! En Python, una tupla es una estructura de datos similar a una lista, pero con la diferencia principal de que las tuplas son inmutables. Esto significa que una vez que creas una tupla, no puedes modificar su contenido, agregar o eliminar elementos. Aquí tienes información sobre las tuplas, sus características principales, algunos métodos y funciones esenciales, así como ejemplos:
 
 **Características principales de las tuplas en Python:**
+
 1. **Inmutabilidad:** Una vez creada, no se pueden modificar, agregar ni eliminar elementos.
 2. **Heterogeneidad:** Pueden contener elementos de diferentes tipos de datos.
 3. **Indexación:** Se accede a los elementos mediante índices, igual que en las listas.
 
 **Operaciones comunes con tuplas:**
+
 1. **Indexación (`[]`):** Acceder a elementos individuales mediante índices.
 2. **Slicing (`[:]`):** Obtener una porción de la tupla.
 3. **Concatenación (`+`):** Combina dos tuplas en una sola.
@@ -337,16 +377,18 @@ tupla_concatenada = tupla1 + tupla2  # tupla_concatenada es igual a (1, 2, 3, 'a
 
 Las tuplas son útiles cuando se desea garantizar la integridad de los datos y prevenir modificaciones accidentales. Se utilizan comúnmente en situaciones donde la inmutabilidad es deseada, como para representar coordenadas, configuraciones iniciales o cualquier conjunto de datos que no debería cambiar durante la ejecución del programa.
 
-# range
+## range
 
 En Python, `range` es un tipo de datos que representa una secuencia de números inmutables. Aunque a menudo se utiliza en bucles, no es una lista, sino un objeto que produce valores según sea necesario. Aquí tienes información sobre los `range`, sus características principales, algunos métodos y funciones esenciales, así como ejemplos:
 
 **Características principales de los `range` en Python:**
+
 1. **Inmutabilidad:** Al igual que las tuplas, los `range` son inmutables, lo que significa que no puedes modificar sus valores después de haber sido creados.
 2. **Eficiencia en el uso de memoria:** Los `range` no almacenan todos los valores en memoria, sino que generan los valores necesarios cuando se requieren.
 3. **Sintaxis:** La sintaxis básica de `range` es `range(inicio, fin, paso)`, donde `inicio` es inclusive y `fin` es exclusivo.
 
 **Operaciones comunes con objetos `range`:**
+
 1. **Iteración:** Se utilizan comúnmente en bucles `for` para generar secuencias de números.
 2. **Conversión a lista:** Puedes convertir un objeto `range` en una lista utilizando la función `list()`.
 
@@ -406,11 +448,13 @@ Los objetos `range` son eficientes en términos de memoria y se utilizan comúnm
 En Python, un conjunto `set` es una colección no ordenada y mutable de elementos únicos. Aquí tienes información sobre los conjuntos, sus características principales, operaciones, métodos y funciones esenciales, así como ejemplos:
 
 **Características principales de los conjuntos en Python:**
+
 1. **Unicidad:** Los conjuntos no contienen elementos duplicados; cada elemento es único en el conjunto.
 2. **Mutabilidad:** Los conjuntos son mutables, lo que significa que puedes agregar y eliminar elementos después de su creación.
 3. **No ordenados:** Los elementos en un conjunto no tienen un orden específico.
 
 **Operaciones comunes con conjuntos:**
+
 1. **Unión (`|`):** Combina elementos de dos conjuntos.
 2. **Intersección (`&`):** Obtiene los elementos comunes a dos conjuntos.
 3. **Diferencia (`-`):** Obtiene los elementos presentes en un conjunto pero no en otro.
@@ -510,7 +554,7 @@ diferencia_simetrica = conjunto_a.symmetric_difference(conjunto_b)
 
 Los conjuntos son útiles para operaciones que involucran membresía, comparaciones y operaciones de conjuntos en matemáticas y ciencias de la computación. Su capacidad para contener elementos únicos y realizar operaciones eficientes los hace valiosos en diversas situaciones.
 
-____
+---
 
 Made with Love ❤️ by [@jelambrar96](https://github.com/jelambrar96)
 
